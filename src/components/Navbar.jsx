@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+// import { AuthContext } from "../context/AuthContext";
 
 
 const NavbarDiv=styled.div`
@@ -22,14 +22,14 @@ border:1px solid black;
 
 const Navbar = () => {
 
-const { auth } =React.useContext(AuthContext)
+// const { auth } =React.useContext(AuthContext)
 
 
   return (
     <>
   <NavbarDiv>
     <Link to="/">Home</Link>
-    <div>{auth?console.log("yes"):console.log("no")}</div>
+    {/* <div>{auth?console.log("yes"):console.log("no")}</div> */}
     <Link to="/Login">Login</Link>
   </NavbarDiv>
 

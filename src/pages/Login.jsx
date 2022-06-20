@@ -29,27 +29,26 @@ const Login = () => {
   };
 
 
-  return <div>
-     <h1>LOGIN</h1>
-      <label>
-        EMAIL
+  return <div style={{marginTop:"50px"}}>
+    
+     
         <input
           type="text"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-      </label>
+     
       <br />
-      <label>
-        PASSWORD
+    
+        
         <input
           type="text"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </label>
+      <br/>
       <button onClick={handleLogin}>LOGIN</button>
   
   </div>;
