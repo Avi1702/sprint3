@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 // import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 
 const NavbarDiv=styled.div`
@@ -11,6 +13,7 @@ color:black;
 margin-top:50px;
 justify-content:space-around;
 border:1px solid black;
+// text-decoration:underline;
 
 &:hover{
   cursor:pointer;
@@ -19,30 +22,16 @@ border:1px solid black;
 
 const Navbar = () => {
 
-// const { cartCount } =React.useContext(CartContext)
-async function homepage(){
+const { auth } =React.useContext(AuthContext)
 
-  const res=  await fetch(`http://localhost:8080/products`)
- const data= await res.json()
- console.log(data)
-
- 
-}
 
   return (
     <>
   <NavbarDiv>
-<div>Home</div>
-{/* <div>Cart:{cartCount}</div> */}
-<div>Login</div>
+    <Link to="/">Home</Link>
+    <div>{auth?console.log("yes"):console.log("no")}</div>
+    <Link to="/Login">Login</Link>
   </NavbarDiv>
-<br/>
-<br/>
-<div id="form">
-  <input type={"text"} placeholder="Enter email"></input><br/>
-  <input type={"password"} placeholder="Enter password"></input><br/>
-  <button onClick={homepage}>Login</button>
-</div>
 
 </>
 
