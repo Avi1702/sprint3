@@ -1,14 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import { AuthContext } from "../context/AuthContext";
+
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const navigate = useNavigate();
+  const {changeAuth} =React.useContext(AuthContext)
 
   const handleLogin = () => {
+     changeAuth()
     const payload = { email, password };
     fetch(`https://reqres.in/api/login`, {
       method: "POST",
@@ -19,8 +22,9 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res)
         if (res.token) {
-          navigate("/");
+          navigate("/Home");
         }
       })
       .catch((err) => {

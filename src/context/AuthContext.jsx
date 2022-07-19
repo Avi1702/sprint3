@@ -7,8 +7,8 @@ export const AuthProvider = ({ children }) => {
   const [auth,setAuth]=React.useState(false)
 
   function changeAuth(){
-    setAuth(true)
+    setAuth(!auth)
   }
 
-  return <AuthContext.Provider value={{auth,changeAuth}}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{auth, changeAuth}}>{children}</AuthContext.Provider>;
 };
